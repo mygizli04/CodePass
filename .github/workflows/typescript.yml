@@ -1,0 +1,28 @@
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm i
+      - run: npm run build
+      - uses: actions/upload-artifact@v2
+        with:
+          name: CodePass
+          path: out
+
+  document:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+      - run: npm i
+      - run: npm run document
+      - uses: actions/upload-artifact@v2
+        with:
+          name: Documentation
+          path: docs

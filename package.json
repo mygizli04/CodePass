@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "document": "typedoc --name CodePass --out docs ./index.ts"
+    "document": "typedoc --name CodePass --out docs ./index.ts",
+    "build": "tsc -p ."
   },
   "dependencies": {
     "node-fetch": "^2.6.1"
