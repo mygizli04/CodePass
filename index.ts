@@ -10,7 +10,7 @@ type CheckResponse = "Account" | "Password" | "True" | "KeyError";
 /**
  * The results of a username/password check.
  */
-type CheckResult = "InvalidAccount" | "WrongPassword" | null;
+export type CheckResult = "InvalidAccount" | "WrongPassword" | null;
 
 /**
  * Check if a username/password combination is correct.
