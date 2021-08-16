@@ -6,3 +6,6 @@ This module requires [node-fetch](https://www.npmjs.com/package/node-fetch). If 
 
 # API Keys
 How to get API keys is detailed on [the CodePass website](https://api.breezecodes.com/).
+
+# Documentation
+Documentation is available at [my website](https://sbeve.me/CodePass/docs/)
