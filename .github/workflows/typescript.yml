@@ -26,8 +26,12 @@ jobs:
         with:
           name: Documentation
           path: docs
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          destination_dir: codepass
-          publish_dir: ./docs
+          source_file: 'docs'
+          destination_repo: 'mygizli04/mygizli04.github.io'
+          destination_folder: 'CodePass'
+          user_email: 'mygizli04@gmail.com'
+          user_name: 'mygizli04'
