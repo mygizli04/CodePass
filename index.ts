@@ -31,6 +31,7 @@ export async function check (key: string, username: string, password: string): P
                 break;
             case "KeyError":
                 reject("Invalid API key.");
+                break;
             case "Password":
                 resolve([false, "WrongPassword"]);
                 break;
@@ -67,6 +68,7 @@ export async function create (key: string, username: string, password: string): 
                 break;
             case "KeyError":
                 reject("Invalid API key.");
+                break;
             case "True":
                 resolve();
         }
