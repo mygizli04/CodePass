@@ -49,11 +49,13 @@ type CreateResponse = "Username" | "True" | "KeyError";
 // On errors we just reject the promise, so no "CreateResult" or anything.
 
 /**
+ * Creates an account
+ * 
  * @async
  * @param  {string} key The API key to be used. Details available on {@link https://api.breezecodes.com/ API page}.
  * @param  {string} username The username to create.
  * @param  {string} password The password to create.
- * @returns void
+ * @returns {void}
  */
 export async function create (key: string, username: string, password: string): Promise<void> {
     return new Promise(async (resolve, reject) => {

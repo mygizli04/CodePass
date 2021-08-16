@@ -1,8 +1,12 @@
 {
+  "scripts": {
+    "document": "typedoc --name CodePass --out docs ./index.ts"
+  },
   "dependencies": {
     "node-fetch": "^2.6.1"
   },
   "devDependencies": {
-    "@types/node-fetch": "^2.5.12"
+    "@types/node-fetch": "^2.5.12",
+    "typedoc": "^0.21.5"
   }
 }
