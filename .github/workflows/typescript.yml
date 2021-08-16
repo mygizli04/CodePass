@@ -26,3 +26,7 @@ jobs:
         with:
           name: Documentation
           path: docs
+      - uses: peaceiris/actions-gh-pages@v3
+        with:
+          destination_dir: codepass
+          publish_dir: ./docs
