@@ -75,3 +75,39 @@ export async function create (key: string, username: string, password: string): 
 
     });
 };
+
+/**
+ * Possible responses of a change password call. (Might be incomplete!)
+ */
+type ChangeResponse = "KeyError" | "Password" | "Username" | "True"
+
+/**
+ * Change a user's password.
+ * 
+ * @async
+ * @param  {string} key The API key to be used. Details available on {@link https://api.breezecodes.com/ API page}.
+ * @param  {string} username Username to change the password on.
+ * @param  {string} oldPassword Current password of the user.
+ * @param  {string} newPassword New password to be used.
+ * @returns {void}
+ */
+export async function changePassword (key: string, username: string, oldPassword: string, newPassword: string): Promise<void> {
+    return new Promise(async (resolve, reject) => {
+        let response = await (await fetch(apiUrl + "/createaccount/" + key + "/" + username + "/" + oldPassword + "/" + newPassword)).text() as ChangeResponse;
+
+        switch (response) {
+            case "KeyError":
+                reject("Invalid API key.")
+                break;
+            case "Password":
+                reject("Wrong password.")
+                break;
+            case "Username":
+                reject("No such user exists.")
+                break;
+            case "True":
+                resolve();
+                break;
+        }
+    });
+}
